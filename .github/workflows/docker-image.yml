@@ -40,8 +40,8 @@ jobs:
           push: true  # Push the Docker image to Docker Hub
           tags: |
 
-           harath3599/devops-task:${{ github.sha }}
-           harath3599/devops-task:latest
+           sharath3599/devops-task:${{ github.sha }}
+           sharath3599/devops-task:latest
            
   # Define the second job to deploy the Kubernetes manifest
   deploy-kubernetes:
@@ -61,7 +61,7 @@ jobs:
       # Modify the deployment.yaml file to change the image tag
       - name: Modify deployment.yaml
         run: |
-          sed -i 's/image: harath3599\/devops-task/image: harath3599\/devops-task:${{ github.sha }}/g' kubernetes-manifest/deployment.yaml
+          sed -i 's/image: sharath3599\/devops-task/image: sharath3599\/devops-task:${{ github.sha }}/g' kubernetes-manifest/deployment.yaml
           # The above command replaces the image tag with the GitHub SHA in the deployment.yaml file
 
       # Apply the Kubernetes manifest to the cluster
