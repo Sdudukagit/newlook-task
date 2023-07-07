@@ -24,4 +24,7 @@ To provision the infrastructure using Terraform, follow the steps below:
    terraform plan
    terraform apply --auto-approve
    '''
+
+   **Testing the API:**
    
+   curl http://20.231.253.229/api/data         
